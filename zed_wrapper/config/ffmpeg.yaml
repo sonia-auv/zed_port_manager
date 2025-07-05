@@ -15,6 +15,6 @@
           performance_interval: 100 # number of frames between perf printouts
           pixel_format: ''
           preset: '' # 'll','ultrafast','superfast','veryfast','faster','fast','medium','slow','slower','veryslow' -> https://trac.ffmpeg.org/wiki/Encode/H.264#Preset
-          profile: '' # 'baseline','main' -> https://trac.ffmpeg.org/wiki/Encode/H.264#Tune
+          profile: 'baseline' # 'baseline','main' -> https://trac.ffmpeg.org/wiki/Encode/H.264#Tune
           qmax: 0 # max allowed quantization. The lower the better quality
-          tune: '' # 'film','animation','grain','stillimage','fastdecode','zerolatency'
+          tune: 'zerolatency' # 'film','animation','grain','stillimage','fastdecode','zerolatency'
