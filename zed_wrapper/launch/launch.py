@@ -72,6 +72,7 @@ def parse_array_param(param):
 def launch_setup(context, *args, **kwargs):
     return_array = []
 
+    auv = os.getenv("AUV", "")
     wrapper_dir = get_package_share_directory('zed_wrapper')    
 
     # Launch configuration variables
@@ -118,9 +119,12 @@ def launch_setup(context, *args, **kwargs):
     gnss_coords = parse_array_param(gnss_antenna_offset.perform(context))
     custom_baseline_val = custom_baseline.perform(context)
 
-    if (camera_name_val == ''):
-        camera_name_val = 'zed'
-
+    if auv == 'AUV8':
+        camera_name_val = 'zedm'
+    else:
+        info = 'env var AUV not set, using default camera model: ' + camera_model_val
+        return_array.append(LogInfo(msg=TextSubstitution(text=info)))
+        
     if (camera_model_val == 'virtual' and float(custom_baseline_val) <= 0):
         return [
             LogInfo(msg="Please set a positive value for the 'custom_baseline' argument when using a 'virtual' Stereo Camera with two ZED X One devices."),
@@ -310,6 +314,7 @@ def generate_launch_description():
                 description='The name of the camera. It can be different from the camera model and it will be used as node `namespace`.'),
             DeclareLaunchArgument(
                 'camera_model',
+                default_value='zed2i',
                 description='[REQUIRED] The model of the camera. Using a wrong camera model can disable camera features.',
                 choices=['zed', 'zedm', 'zed2', 'zed2i', 'zedx', 'zedxm', 'virtual', 'zedxonegs', 'zedxone4k']),
             DeclareLaunchArgument(
@@ -342,17 +347,17 @@ def generate_launch_description():
                 description='The ID of the camera to be opened. It is mandatory to use this parameter or serial number in multi-camera rigs to distinguish between different cameras.  Use `ZED_Explorer -a` to retrieve the ID of all the connected cameras.'),
             DeclareLaunchArgument(
                 'publish_urdf',
-                default_value='true',
+                default_value='false',
                 description='Enable URDF processing and starts Robot State Published to propagate static TF.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(
                 'publish_tf',
-                default_value='true',
+                default_value='false',
                 description='Enable publication of the `odom -> camera_link` TF.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(
                 'publish_map_tf',
-                default_value='true',
+                default_value='false',
                 description='Enable publication of the `map -> odom` TF. Note: Ignored if `publish_tf` is False.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(
