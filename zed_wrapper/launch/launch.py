@@ -72,7 +72,7 @@ def parse_array_param(param):
 def launch_setup(context, *args, **kwargs):
     return_array = []
 
-    auv = os.getenv("AUV", "")
+    auv = os.getenv("AUV", None)
     wrapper_dir = get_package_share_directory('zed_wrapper')    
 
     # Launch configuration variables
