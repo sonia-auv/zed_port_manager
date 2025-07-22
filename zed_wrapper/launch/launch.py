@@ -121,9 +121,14 @@ def launch_setup(context, *args, **kwargs):
 
     if auv == 'AUV8':
         camera_name_val = 'zedm'
-    else:
-        info = 'env var AUV not set, using default camera model: ' + camera_model_val
+        info = 'Using camera model: ' + camera_model_val
         return_array.append(LogInfo(msg=TextSubstitution(text=info)))
+    elif auv == 'LITE1':
+        camera_name_val = 'zed2i'
+        info = 'Using camera model: ' + camera_model_val
+        return_array.append(LogInfo(msg=TextSubstitution(text=info)))
+    else:
+        raise Exception('env var AUV not set.')
         
     if (camera_model_val == 'virtual' and float(custom_baseline_val) <= 0):
         return [
@@ -314,7 +319,7 @@ def generate_launch_description():
                 description='The name of the camera. It can be different from the camera model and it will be used as node `namespace`.'),
             DeclareLaunchArgument(
                 'camera_model',
-                default_value='zed2i',
+                default_value='',
                 description='[REQUIRED] The model of the camera. Using a wrong camera model can disable camera features.',
                 choices=['zed', 'zedm', 'zed2', 'zed2i', 'zedx', 'zedxm', 'virtual', 'zedxonegs', 'zedxone4k']),
             DeclareLaunchArgument(
