@@ -120,11 +120,11 @@ def launch_setup(context, *args, **kwargs):
     custom_baseline_val = custom_baseline.perform(context)
 
     if auv == 'AUV8':
-        camera_name_val = 'zedm'
+        camera_model_val = 'zedm'
         info = 'Using camera model: ' + camera_model_val
         return_array.append(LogInfo(msg=TextSubstitution(text=info)))
     elif auv == 'LITE1':
-        camera_name_val = 'zed2i'
+        camera_model_val = 'zed2i'
         info = 'Using camera model: ' + camera_model_val
         return_array.append(LogInfo(msg=TextSubstitution(text=info)))
     else:
