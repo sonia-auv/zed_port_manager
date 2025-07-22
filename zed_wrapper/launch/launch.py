@@ -347,7 +347,7 @@ def generate_launch_description():
                 description='The ID of the camera to be opened. It is mandatory to use this parameter or serial number in multi-camera rigs to distinguish between different cameras.  Use `ZED_Explorer -a` to retrieve the ID of all the connected cameras.'),
             DeclareLaunchArgument(
                 'publish_urdf',
-                default_value='false',
+                default_value='true',
                 description='Enable URDF processing and starts Robot State Published to propagate static TF.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(
