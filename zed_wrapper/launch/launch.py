@@ -250,8 +250,7 @@ def launch_setup(context, *args, **kwargs):
             # YAML files
             config_common_path_val,  # Common parameters
             config_camera_path,  # Camera related parameters
-            config_ffmpeg, # FFMPEG parameters
-            zed_calib
+            config_ffmpeg # FFMPEG parameters
     ]
 
     if( ros_params_override_path_val != ''):
