@@ -8,7 +8,7 @@
             camera_name: 'zed2i' # usually overwritten by launch file
             grab_resolution: 'VGA' # The native camera grab resolution. 'HD2K', 'HD1080', 'HD720', 'VGA', 'AUTO'
             grab_frame_rate: 15 # ZED SDK internal grabbing rate
-            optional_opencv_calibration_file: '/config/zed2i_calibration.yml'
+            #optional_opencv_calibration_file: '/config/zed2i_calibration.yml'
         depth:
             min_depth: 0.3 # Min: 0.3, Max: 3.0
             max_depth: 10.0 # Max: 40.0
