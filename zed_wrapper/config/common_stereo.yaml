@@ -28,7 +28,7 @@
             pub_frame_rate: 15.0 # frequency of publishing of visual images and depth images
             enable_image_validity_check: 1 # [SDK5 required] Sets the image validity check. If set to 1, the SDK will check if the frames are valid before processing.
             gpu_id: -1
-            optional_opencv_calibration_file: '/home/sonia/zed2i_calibration.yaml' # Optional path where the ZED SDK can find a file containing the calibration information of the camera computed by OpenCV. Read the ZED SDK documentation for more information: https://www.stereolabs.com/docs/api/structsl_1_1InitParameters.html#a9eab2753374ef3baec1d31960859ba19
+            optional_opencv_calibration_file: '/home/sonia/zed2i_calibration.yml' # Optional path where the ZED SDK can find a file containing the calibration information of the camera computed by OpenCV. Read the ZED SDK documentation for more information: https://www.stereolabs.com/docs/api/structsl_1_1InitParameters.html#a9eab2753374ef3baec1d31960859ba19
             async_image_retrieval: false # Enable/disable the asynchronous image retrieval - Note: enable only to improve SVO recording performance
 
         video:
