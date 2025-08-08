@@ -250,7 +250,8 @@ def launch_setup(context, *args, **kwargs):
             # YAML files
             config_common_path_val,  # Common parameters
             config_camera_path,  # Camera related parameters
-            config_ffmpeg # FFMPEG parameters
+            config_ffmpeg, # FFMPEG parameters
+            zed_calib
     ]
 
     if( ros_params_override_path_val != ''):
@@ -274,7 +275,7 @@ def launch_setup(context, *args, **kwargs):
                 'pos_tracking.publish_map_tf': publish_map_tf,
                 'sensors.publish_imu_tf': publish_imu_tf,
                 'gnss_fusion.gnss_fusion_enabled': enable_gnss,
-                'general.optional_opencv_calibration_file': zed_calib
+                'general.optional_opencv_calibration_file': TextSubstitution(text=zed_calib)
             }
     )
 
