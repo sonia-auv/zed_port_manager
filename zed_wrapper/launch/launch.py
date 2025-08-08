@@ -49,7 +49,7 @@ default_config_common = os.path.join(
 zed_calib = os.path.join(
     get_package_share_directory('zed_wrapper'),
     'config',
-    'zed2i_calibration.yml'
+    'zed2i_calibration.yaml'
 )
     
 # FFMPEG Configuration to be loaded by ZED Node
@@ -274,7 +274,7 @@ def launch_setup(context, *args, **kwargs):
                 'pos_tracking.publish_map_tf': publish_map_tf,
                 'sensors.publish_imu_tf': publish_imu_tf,
                 'gnss_fusion.gnss_fusion_enabled': enable_gnss,
-                'general.optional_opencv_calibration_file': str(zed_calib)
+                'general.optional_opencv_calibration_file': zed_calib
             }
     )
 
