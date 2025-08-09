@@ -1,5 +1,3 @@
-%YAML:1.0
----
 Size: [ 672, 376 ]
 K_LEFT: !!opencv-matrix
    rows: 3
