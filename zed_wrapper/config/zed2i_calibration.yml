@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-Size: [672, 376]
+Size: [ 672, 376 ]
 K_LEFT: !!opencv-matrix
    rows: 3
    cols: 3
@@ -15,7 +15,7 @@ K_LEFT: !!opencv-matrix
          195.53868680460334,
          0.,
          0.,
-         1.,
+         1.
       ]
 D_LEFT: !!opencv-matrix
    rows: 1
@@ -36,7 +36,7 @@ D_LEFT: !!opencv-matrix
          0.,
          0.,
          0.,
-         0.,
+         0.
       ]
 K_RIGHT: !!opencv-matrix
    rows: 3
@@ -52,7 +52,7 @@ K_RIGHT: !!opencv-matrix
          128.69433534522506,
          0.,
          0.,
-         1.,
+         1.
       ]
 D_RIGHT: !!opencv-matrix
    rows: 1
@@ -73,7 +73,7 @@ D_RIGHT: !!opencv-matrix
          0.,
          0.,
          0.,
-         0.,
+         0.
       ]
 R: !!opencv-matrix
    rows: 3
@@ -89,7 +89,7 @@ R: !!opencv-matrix
          0.32188890813553755,
          0.18748077036737254,
          0.27044300462178045,
-         0.9443047929527838,
+         0.9443047929527838
       ]
 T: !!opencv-matrix
    rows: 3
