@@ -1,6 +1,5 @@
----
 Size: [672, 376]
-K_LEFT: !!map
+K_LEFT: !!opencv-matrix
    rows: 3
    cols: 3
    dt: d
@@ -16,7 +15,7 @@ K_LEFT: !!map
          0.,
          1.,
       ]
-D_LEFT: !!map
+D_LEFT: !!opencv-matrix
    rows: 1
    cols: 14
    dt: d
@@ -37,7 +36,7 @@ D_LEFT: !!map
          0.,
          0.,
       ]
-K_RIGHT: !!map
+K_RIGHT: !!opencv-matrix
    rows: 3
    cols: 3
    dt: d
@@ -53,7 +52,7 @@ K_RIGHT: !!map
          0.,
          1.,
       ]
-D_RIGHT: !!map
+D_RIGHT: !!opencv-matrix
    rows: 1
    cols: 14
    dt: d
@@ -74,7 +73,7 @@ D_RIGHT: !!map
          0.,
          0.,
       ]
-R: !!map
+R: !!opencv-matrix
    rows: 3
    cols: 3
    dt: d
@@ -90,7 +89,7 @@ R: !!map
          0.27044300462178045,
          0.9443047929527838,
       ]
-T: !!map
+T: !!opencv-matrix
    rows: 3
    cols: 1
    dt: d
