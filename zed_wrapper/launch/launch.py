@@ -274,10 +274,9 @@ def launch_setup(context, *args, **kwargs):
                 'pos_tracking.publish_map_tf': publish_map_tf,
                 'sensors.publish_imu_tf': publish_imu_tf,
                 'gnss_fusion.gnss_fusion_enabled': enable_gnss,
-                'general.optional_opencv_calibration_file': zed_calib
+                'general.optional_opencv_calibration_file': '/home/sonia/ssd/ros2_sonia_ws/src/zed_port_manager/zed_wrapper/config/zed2i_calibration.yml'
             }
     )
-
 
     # ZED Wrapper component
     if( camera_model_val=='zed' or
