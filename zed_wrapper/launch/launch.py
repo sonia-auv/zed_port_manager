@@ -273,7 +273,7 @@ def launch_setup(context, *args, **kwargs):
                 'pos_tracking.publish_tf': publish_tf,
                 'pos_tracking.publish_map_tf': publish_map_tf,
                 'sensors.publish_imu_tf': publish_imu_tf,
-                'gnss_fusion.gnss_fusion_enabled': enable_gnss
+                'gnss_fusion.gnss_fusion_enabled': enable_gnss,
                 'general.optional_opencv_calibration_file': zed_calib
             }
     )
