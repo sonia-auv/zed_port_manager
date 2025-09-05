@@ -267,7 +267,13 @@ def launch_setup(context, *args, **kwargs):
                 'pos_tracking.publish_tf': publish_tf,
                 'pos_tracking.publish_map_tf': publish_map_tf,
                 'sensors.publish_imu_tf': publish_imu_tf,
-                'gnss_fusion.gnss_fusion_enabled': enable_gnss
+                'sensors.sensors_pub_rate': 50.0,
+                'depth.depth_mode':"NEURAL",
+                'depth.depth_confidence':100,
+                'depth.depth_texture_conf':100,
+                'depth.max_depth':15.0,
+                'general.grab_resolution':'HD720',
+                'depth.openni_depth_mode':True
             }
     )
 
