@@ -5,6 +5,7 @@ set -o pipefail
 
 sudo apt update
 sudo apt install -y  \
+	gcc-10 g++-10 \
 	ros-humble-image-transport \
 	ros-humble-builtin-interfaces \
 	ros-humble-std-msgs \
@@ -26,8 +27,21 @@ sudo apt install -y  \
 	ros-humble-shape-msgs \
 	ros-humble-robot-localization
 
+$DOCKER_CI_DIR/scripts/install_cuda.sh
+
 source /opt/ros/humble/setup.bash
+
+git clone https://github.com/stereolabs/zed-ros2-wrapper.git
+
+cd zed-ros2-wrapper
+colcon build --cmake-force-configure --install INSTALL_BASE
+source INSTALL_BASE/setup.sh
+cd ..
 
 cd zed_port_manager 
 
+export CC=gcc-10
+export CXX=g++-10
+export CUDACXX=$(find / -name nvcc)
+export CUDAHOSTCXX=g++-10
 colcon build --cmake-force-configure --install INSTALL_BASE
