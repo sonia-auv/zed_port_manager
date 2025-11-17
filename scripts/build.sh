@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+# Usage: ./scripts/build.sh [DOCKER_CI_DIR]
+
 set -e
 set -o pipefail
+
+DOCKER_CI_DIR=$1
 
 sudo apt update
 sudo apt install -y  \
