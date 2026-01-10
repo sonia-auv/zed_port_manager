@@ -35,13 +35,17 @@ DOCKER_CI_DIR=$1
 
 source /opt/ros/humble/setup.bash
 
-# TODO: Maybe remove that
-git clone https://github.com/stereolabs/zed-ros2-wrapper.git
+wget https://download.stereolabs.com/zedsdk/5.1/cu13/ubuntu22
+./ubuntu22
+rm ubuntu22
 
-cd zed-ros2-wrapper
-colcon build --cmake-force-configure --install INSTALL_BASE
-source INSTALL_BASE/setup.sh
-cd ..
+# TODO: Maybe remove that
+# git clone https://github.com/stereolabs/zed-ros2-wrapper.git
+# 
+# cd zed-ros2-wrapper
+# colcon build --cmake-force-configure --install INSTALL_BASE
+# source INSTALL_BASE/setup.sh
+# cd ..
 
 cd zed_port_manager 
 
