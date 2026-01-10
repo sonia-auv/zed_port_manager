@@ -36,7 +36,7 @@ DOCKER_CI_DIR=$1
 source /opt/ros/humble/setup.bash
 
 wget https://download.stereolabs.com/zedsdk/5.1/cu13/ubuntu22
-./ubuntu22
+sudo ./ubuntu22
 rm ubuntu22
 
 # TODO: Maybe remove that
